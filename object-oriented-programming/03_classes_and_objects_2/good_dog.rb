@@ -1,10 +1,13 @@
 class GoodDog
-  attr_accessor :name, :height, :weight
+  DOG_YEARS = 7
 
-  def initialize(n, h, w)
+  attr_accessor :name, :height, :weight, :age
+
+  def initialize(n, h, w, a)
     @name = n
     @height = h
     @weight = w
+    @age = a * DOG_YEARS
   end
 
   def speak
@@ -24,6 +27,14 @@ class GoodDog
   def self.what_am_i
     "I'm a GoodDog class!"
   end
+
+  def to_s
+    "This dog's name is #{name} and it is #{age} in dog years."
+  end
 end
 
 puts GoodDog.what_am_i
+
+sparky = GoodDog.new('Sparky', '12 inches', '10 lbs', 4)
+
+puts sparky
